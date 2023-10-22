@@ -90,6 +90,15 @@ var finances = [
 console.log("Financial Analysis");
 console.log("-------------------");
 
+// Total Months
 let totalMonths = finances.length;
-
 console.log("Total Months: ", totalMonths);
+
+// Net total profit/losses over entire period
+
+var total = 0;
+var i = 0;
+for (i = 0; i <finances.length; i++) {
+  total += finances[i][1];// total = total + finances[i][1]
+}
+console.log("Total: $",total);
