@@ -1,7 +1,7 @@
 var finances = [
-  ['Jan-2010', 867884],
-  ['Feb-2010', 984655],
-  ['Mar-2010', 322013],
+  ['Jan-2010', 867884], //[0][0],[0][1]
+  ['Feb-2010', 984655], //[1][0],[1][1]
+  ['Mar-2010', 322013], //[2][0],[2][1]
   ['Apr-2010', -69417],
   ['May-2010', 310503],
   ['Jun-2010', 522857],
@@ -87,18 +87,43 @@ var finances = [
   ['Feb-2017', 671099],
 ];
 
+// --------------------------------------------------------------------
 console.log("Financial Analysis");
 console.log("-------------------");
 
 // Total Months
 let totalMonths = finances.length;
 console.log("Total Months: ", totalMonths);
-
-// Net total profit/losses over entire period
-
+// --------------------------------------------------------------------
+// Total: (Net total profit/losses over entire period)
 var total = 0;
-var i = 0;
-for (i = 0; i <finances.length; i++) {
+for (var i = 0; i <finances.length; i++) {
   total += finances[i][1];// total = total + finances[i][1]
 }
 console.log("Total: $",total);
+// --------------------------------------------------------------------
+// Average of the changes in profit/losses over the entire period
+
+var average = 0;
+average = total / finances.length;
+// console.log("Average Change: ",average.toFixed(2));
+// changes +/- of all months / average
+Math.round((totalChange / (finances.length -1)) * 100) / 100; 
+
+var avgChange = 0;
+// work out the changes between each month
+// find average of those changes
+// write all differences, spot pattern
+
+//1
+(var finances[1][1]) - (var finances[0][1])
+//2 
+(var finances[2][1]) - (var finances[1][1])
+//3
+(var finances[3][1]) - (var finances[2][1])
+
+var finances[i][1] = monthAfter
+
+var finances[i][1] = monthBefore
+
+// start at var = 1
