@@ -133,5 +133,14 @@ for (var i = 1; i < finances.length; i++) {
 } 
 }
 console.log("Greatest Increase in Profits/Losses: " + month + " ($" + increase + ")");
-
+// -------------------------------------------------------------------
 // decrease variable
+var decrease = 0;
+var month2 = ""; //month2 as month variable is used for increase
+for (var i = 1; i < finances.length; i++) {
+ if (finances[i][1] - finances[i-1][1] < decrease) {
+  decrease = finances[i][1] - finances[i-1][1]
+  month2 = finances[i][0]
+}
+}
+console.log("Greatest Decrease in Profits/Losses: " + month2 + " ($" + decrease + ")");
