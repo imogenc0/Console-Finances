@@ -104,26 +104,21 @@ console.log("Total: $",total);
 // --------------------------------------------------------------------
 // Average of the changes in profit/losses over the entire period
 
-var average = 0;
-average = total / finances.length;
-// console.log("Average Change: ",average.toFixed(2));
-// changes +/- of all months / average
-Math.round((totalChange / (finances.length -1)) * 100) / 100; 
-
-var avgChange = 0;
-// work out the changes between each month
-// find average of those changes
-// write all differences, spot pattern
-
 //1
-(var finances[1][1]) - (var finances[0][1])
-//2 
-(var finances[2][1]) - (var finances[1][1])
-//3
-(var finances[3][1]) - (var finances[2][1])
+// (var finances[1][1]) - (var finances[0][1])
+// //2 
+// (var finances[2][1]) - (var finances[1][1])
+// //3
+// (var finances[3][1]) - (var finances[2][1])
 
-var finances[i][1] = monthAfter
+// total change
+  var totalChange = 0;
+  for (var i = 1; i < finances.length; i++) {
+    totalChange += finances[i][1] - finances[i-1][1]; // totalChange = totalchange + [(finances[i][1]) - (finances[i][1])]
+  }
+  console.log(totalChange);
 
-var finances[i][1] = monthBefore
+  var avgchange = (totalChange/(finances.length - 1))
+  console.log(avgchange.toFixed(2));
 
-// start at var = 1
+  // ------------------------------------------------------------------
