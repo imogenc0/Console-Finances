@@ -116,9 +116,22 @@ console.log("Total: $",total);
   for (var i = 1; i < finances.length; i++) {
     totalChange += finances[i][1] - finances[i-1][1]; // totalChange = totalchange + [(finances[i][1]) - (finances[i][1])]
   }
-  console.log(totalChange);
+  // console.log(totalChange);
 
   var avgchange = (totalChange/(finances.length - 1))
-  console.log(avgchange.toFixed(2));
+  console.log("Average Change: " + avgchange.toFixed(2));
 
-  // ------------------------------------------------------------------
+// ------------------------------------------------------------------
+// Greatest increase in profits/losses
+// increase variable and month variable with empty string as output has 2 variables
+var increase = 0;
+var month = "";
+for (var i = 1; i < finances.length; i++) {
+ if (finances[i][1] - finances[i-1][1] > increase) {
+  increase = finances[i][1] - finances[i-1][1]
+  month = finances[i][0]
+} 
+}
+console.log("Greatest Increase in Profits/Losses: " + month + " ($" + increase + ")");
+
+// decrease variable
